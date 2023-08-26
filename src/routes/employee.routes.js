@@ -1,6 +1,7 @@
 import { Router } from 'express';
+//Importamos los controladores
 const router = Router();
-router.get('/', (req, res) => {
+router.get('/employees/login', (req, res) => {
     res.send("Página principal")
     
 })
