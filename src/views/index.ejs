@@ -1,5 +1,306 @@
-<%- include('./partials/header.ejs') %>
-  <%- include('./partials/navbar.ejs') %>
-  <h1 class="text-center">Hola Mundo</h1>
-  <h2 class="text-center">Esto va de información general XD</h2>
+<%- include('./partials/header.ejs') %> <%- include('./partials/navbar.ejs') %>
+<!-- Principal -->
+<main>
+  <section class="presentation" id="home">
+    <h1 class="text-center strong">Portal Restaurante</h1>
+    <h3 class="text-center font-weight-normal font-italic">
+      "Nuestro lema es servir con agrado al público."
+    </h3>
+    <img src="IMG/logo.png" class="img-fluid mx-auto d-block img-logo" alt="" />
+    <br />
+  </section>
+  <section class="about-us" id="about-us">
+    <h1 class="text-center bg-dark text-white py-4">Sobre Nosotros</h1>
+    <br />
+    <h2 class="text-center">Objetivos de nuestra empresa:</h2>
+    <br />
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col">
+          <!-- Card -->
+          <div class="card shadow-sm">
+            <!-- Card image -->
+            <img
+              class="card-img-top"
+              src="IMG/monigote_mision.jpg"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <p class="card-text text-center font-weight-bold">Misión:</p>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+                incidunt nemo repellendus perspiciatis, debitis, eligendi facere
+                ut vitae esse provident at delectus asperiores eos, labore iste
+                recusandae illo ratione nobis.
+              </p>
+              <!-- <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins</small>
+                            </div> -->
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <!-- Card -->
+          <div class="card shadow-sm">
+            <!-- Card image -->
+            <img
+              class="card-img-top"
+              src="IMG/monigote_mision.jpg"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <p class="card-text text-center font-weight-bold">Visión:</p>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+                incidunt nemo repellendus perspiciatis, debitis, eligendi facere
+                ut vitae esse provident at delectus asperiores eos, labore iste
+                recusandae illo ratione nobis.
+              </p>
+              <!-- <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins</small>
+                            </div> -->
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <!-- Card -->
+          <div class="card shadow-sm">
+            <!-- Card image -->
+            <img
+              class="card-img-top"
+              src="IMG/monigote_mision.jpg"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <p class="card-text text-center font-weight-bold">
+                Política institucional:
+              </p>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+                incidunt nemo repellendus perspiciatis, debitis, eligendi facere
+                ut vitae esse provident at delectus asperiores eos, labore iste
+                recusandae illo ratione nobis.
+              </p>
+              <!-- <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins</small>
+                            </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br />
+  <section class="menu" id="menu">
+    <h1 class="text-center bg-dark text-white py-4">Nuestro menú</h1>
+    <h3 class="text-center">
+      Conoce y disfruta de las diferentes opciones que tenemos preparadas para
+      ti.
+    </h3>
+    <!-- Ventanas modales -->
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-4">
+          <div class="card-body">
+            <p class="card-text text-center font-weight-bold">Menú 1:</p>
+          </div>
+          <!-- Generated Modal Window -->
+          <a href="#modal" class="btn btn-primary cta d-block">Ver menú</a>
+        </div>
+        <div class="col-lg-4">
+          <div class="card-body">
+            <p class="card-text text-center font-weight-bold">Menú 2:</p>
+          </div>
+          <!-- Generated Modal Window -->
+          <a href="#modal" class="btn btn-primary cta d-block">Ver menú</a>
+        </div>
+        <div class="col-lg-4">
+          <div class="card-body">
+            <p class="card-text text-center font-weight-bold">Menú 3:</p>
+          </div>
+          <!-- Generated Modal Window -->
+          <a href="#modal" class="btn btn-primary cta d-block">Ver menú</a>
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-lg-4">
+          <div class="card-body">
+            <p class="card-text text-center font-weight-bold">Menú 4:</p>
+          </div>
+          <!-- Generated Modal Window -->
+          <a href="#modal" class="btn btn-primary cta d-block">Ver menú</a>
+        </div>
+        <div class="col-lg-4">
+          <div class="card-body">
+            <p class="card-text text-center font-weight-bold">Menú 5:</p>
+          </div>
+          <!-- Generated Modal Window -->
+          <a href="#modal" class="btn btn-primary cta d-block">Ver menú</a>
+        </div>
+        <div class="col-lg-4">
+          <div class="card-body">
+            <p class="card-text text-center font-weight-bold">Menú 6:</p>
+          </div>
+          <!-- Generated Modal Window -->
+          <a href="#modal" class="btn btn-primary cta d-block">Ver menú</a>
+        </div>
+      </div>
+      <br />
+    </div>
+  </section>
+  <!-- Section modal of menú -->
+  <section id="modal" class="modal">
+    <div class="modal__container">
+      <figure class="modal__picture">
+        <img src="IMG/menu.jpg" class="modal__img" alt="" />
+      </figure>
+      <h2 class="modal__title">
+        <span class="modal__title modal__title--bold">
+          Este menú incluye lo siguiente:
+        </span>
+      </h2>
+      <p class="modal__paragraph">
+        ► Un pollo asado entero con miel.
+        <br />
+        ► Porción de papas a la francesa.
+        <br />
+        ► Gaseosa litro de su preferencia.
+        <br />
+        <span class="modal__title modal__title--bold">
+          Por tan solo: $200
+        </span>
+      </p>
+      <a href="#menu" class="modal__close btn btn-danger">Cerrar ventana</a>
+    </div>
+  </section>
+  <br />
+  <section class="reservations" id="reservations">
+    <h1 class="text-center bg-dark text-white py-4">Reserva tu mesa:</h1>
+    <h3 class="text-center">
+      Usa el formulario para poder realizar la reserva.
+    </h3>
+    <div class="container">
+      <!-- Form con PHP -->
+      <form action="reservationsForm.php" method="POST">
+        <div class="col-lg-12">
+          <div class="form-group">
+            <label for="nombre">Nombre(s):</label>
+            <input
+              type="text"
+              class="form-control"
+              name="nombreCliente"
+              placeholder="Nombre(s)"
+            />
+          </div>
+          <div class="form-group">
+            <label for="apellido">Apellidos:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="apellidoCliente"
+              placeholder="Apellidos"
+            />
+          </div>
+          <div class="form-group">
+            <label for="correo">Correo:</label>
+            <input
+              type="email"
+              class="form-control"
+              name="correoCliente"
+              placeholder="Correo"
+            />
+          </div>
+          <div class="form-group">
+            <label for="correo">Confirma correo:</label>
+            <input
+              type="email"
+              class="form-control"
+              name="correoConfirmacion"
+              placeholder="Correo"
+            />
+          </div>
+          <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="telefono"
+              placeholder="Teléfono"
+            />
+          </div>
+          <div class="form-group">
+            <label for="acompañantes">Digita el número de acompañantes</label>
+            <input
+              type="text"
+              class="form-control"
+              name="acompañantes"
+              placeholder="Número de acompañantes"
+            />
+          </div>
+          <div class="form-group">
+            <label for="fecha">Digita la fecha de la reserva:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="fechaReserva"
+              placeholder="Fecha (en formato YYYY-MM-DD)"
+            />
+          </div>
+          <div class="form-group">
+            <label for="hora">Digita la hora de la reserva:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="horaReserva"
+              placeholder="Hora (en formato HH:MM AM/PM)"
+            />
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Observaciones:</label>
+            <textarea
+              class="form-control"
+              name="observaciones"
+              rows="3"
+            ></textarea>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <input
+            type="submit"
+            class="btn btn-success btn-block"
+            name="reservation"
+            value="Reservar"
+          />
+          <br />
+          <a
+            href="buscarReserva.php"
+            class="btn btn-danger btn-block"
+            name="editar"
+            value="Editar Reservación"
+            >Editar Reservación</a
+          >
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+<br />
+<!-- Footer -->
+<footer class="bg-dark text-white">
+  <div class="footer-copyright text-center py-3">
+    © 2020 Copyright: Portal Restaurante
+  </div>
+</footer>
 <%- include('./partials/footer.ejs') %>
