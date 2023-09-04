@@ -1,7 +1,8 @@
 import { Router } from 'express';
 const router = Router();
 //Importamos los controladores de empleados
-import { createEmployee, getAllEmployees, toggleEmployee, updateEmployee } from '../controllers/admin.controllers.js';
+import { createEmployee, dashboardAdmin, getAllEmployees, toggleEmployee, updateEmployee } from '../controllers/admin.controllers.js';
+router.get('/dashboard', dashboardAdmin);
 router.get('/getAllEmployees', getAllEmployees);
 router.post('/createEmployee', createEmployee);
 router.patch('/updateEmployee', updateEmployee);

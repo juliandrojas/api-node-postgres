@@ -4,5 +4,5 @@ import { checkUser, home, login } from '../controllers/index.controllers.js';
 const router = Router();
 router.get('/', home);
 router.get('/login', login);
-router.post('/checkUser', checkUser)
+router.post('/checkUser', checkUser);
 export default router;

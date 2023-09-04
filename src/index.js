@@ -24,6 +24,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Configuramos el middleware morgan para el registro de solicitudes
 app.use(morgan('dev'));
 
+//Configuramos las imagenes
+app.use(express.static('public')); // Configura la carpeta 'public' como estática
+
 // Usamos las rutas
 app.use('/', indexRoutes);
 app.use('/admin/', adminRoutes);

@@ -1,3 +1,6 @@
+export const dashboardAdmin = (req, res) => {
+      res.render('admin/adminDashboard.ejs'); // Reemplaza 'pagina_administrador' con la ruta de tu página de administrador
+}
 //Controlador para empleados
 export const createEmployee = (req, res) => {
     res.send("Creando empleado")
