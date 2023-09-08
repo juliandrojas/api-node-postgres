@@ -66,17 +66,22 @@ export const checkUser = async (req, res) => {
 };
 export const changeStatus = async (req, res) => {
   const { idusuario } = req.params; // Obtén el idusuario de la URL
-
   try {
-    // Consulta la base de datos para obtener los datos completos de la fila
-    const userData = await pool.query('SELECT * FROM usuarios WHERE idusuario = $1', [idusuario]);
-
+    // Consulta la base de datos para obtener el estado actual del usuario
+    const getStatusQuery = 'SELECT status FROM usuarios WHERE idusuario = $1';
+    const userData = await pool.query(getStatusQuery, [idusuario]);
+    
     if (userData.rows.length > 0) {
-      const { nombre, correo, status } = userData.rows[0];
+      // Obtén el estado actual del usuario
+      const currentStatus = userData.rows[0].status;
       
-      // Ahora puedes usar nombre, correo, status, etc., en tu controlador
-      console.log(nombre, correo, status);
-      res.send("Usuario encontrado")
+      // Cambia el estado en función del estado actual
+      const newStatus = currentStatus === 'Suspendido' ? 'Activo' : 'Suspendido';
+      // Actualiza el estado en la base de datos
+      const updateUserStatusQuery = 'UPDATE usuarios SET status = $1 WHERE idusuario = $2';
+      await pool.query(updateUserStatusQuery, [newStatus, idusuario]);
+      // Envía una respuesta exitosa
+      res.render('partials/alerts/changeStatusEmployee.ejs');
     } else {
       // Maneja el caso en el que no se encuentra el usuario
       res.status(404).send('Usuario no encontrado');
@@ -86,3 +91,4 @@ export const changeStatus = async (req, res) => {
     res.status(500).send('Error en el servidor');
   }
 };
+
