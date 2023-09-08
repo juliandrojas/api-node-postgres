@@ -1,46 +1,81 @@
-<%- include('./../partials/header.ejs') %> 
-<%- include('./../partials/navbar/navbarAdmin.ejs') %>
+<%- include('./../partials/header.ejs') %> <%-
+include('./../partials/navbar/navbarAdmin.ejs') %>
 <h1 class="text-center">Dashboard de administrador</h1>
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <a href="/admin/createEmployee" class="btn btn-primary btn-block">Registrar empleado</a>
+      <a href="/admin/createEmployee" class="btn btn-primary btn-block"
+        >Registrar empleado</a
+      >
     </div>
     <div class="col-md-6">
       <a href="#" class="btn btn-primary btn-block">Registrar promoción</a>
     </div>
   </div>
-</div>
-<div class="container">
+  <hr>
   <h1 class="text-center">Lista de empleados</h1>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
+  <div id="tableOfEmployee">
+    <table class="table table-striped text-center">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Correo</th>
+          <th scope="col">Status</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="tableOfEmployees">
+      </tbody>  
+    </table>   
+  </div>
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    getData();
+  });
+  //Función asíncrona para obtener los datos de la API
+  async function getData() {
+    //Constante con la URL de la API
+    const urlEndpoint = `http://localhost:3000/admin/getAllEmployees`;
+    //Bloque try-catch con los datos de la API
+    try {
+      //Creamos constante de respuesta para pasarle la url
+      const response = await fetch(urlEndpoint);
+      //Creamos constante para respuesta del JSON
+      const result = await response.json();
+      //Implementamos una función que nos permita poner los datos de la API en nuestro sitio web
+      getGallery(result);
+    } catch (error) {
+      //Si hay un error, lo imprimimos
+      console.log(error);
+    }
+    function getGallery(employees) {
+      //Creamos constante para seleccionar donde poner la galería
+      const employeesTable = document.querySelector("#tableOfEmployees");
+      //Creamos una variable para inyectar el código HTML de la galería y la inicializamos
+      let html = "";
+      //El array está en plural y el iterador en singular
+      employees.forEach((employee) => {
+        //Destructuramos el array y en una sola instruccción igualamos la variable comida
+        //Elementos del array: id, nombrePlato e imagen
+        const { idusuario ,nombre, correo, status } = employee;
+        //Armamos la tarjeta base y con la iteración, podemos multiplicarla y la anexamos a la variable del código HTML
+        html += `
+          <tr>
+            <td>${nombre}</td>
+            <td>${correo}</td>
+            <td>${status}</td>
+            <td>
+              <a href="/changeStatus/${idusuario}" class="btn btn-secondary">
+                Cambiar Status <i class="fas fa-pencil-alt"></i>
+              </a>
+            </td>
+          </tr>
+        `;
+        //Inyectamos el código HTML de la tarjeta
+        employeesTable.innerHTML = html;
+      });
+    }
+  }
+</script>
 <%- include('./../partials/footer.ejs') %>

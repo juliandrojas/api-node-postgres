@@ -7,7 +7,8 @@ router.get('/createEmployee', formRegisterEmployee);
 router.post('/registerEmployee', registerEmployee);
 router.get('/getAllEmployees', getAllEmployees);
 router.post('/createEmployee', registerEmployee);
-router.patch('/updateEmployee', updateEmployee);
+//router.patch('/changeStatus/:idusuario', updateEmployee);
+router.get('/changeStatus/:idusuario', updateEmployee);
 router.patch('/toggleEmployee', toggleEmployee);
 //Importamos los controladores de los productos
 import { getAllProducts } from '../controllers/admin.controllers.js';
