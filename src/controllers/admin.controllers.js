@@ -3,6 +3,10 @@ import { pool } from '../database.js';
 export const dashboardAdmin = (req, res) => {
   res.render('admin/adminDashboard.ejs'); // Reemplaza 'pagina_administrador' con la ruta de tu página de administrador
 }
+
+export const handleActionNotAllowed = (req, res) => {
+  res.render('notAllowedAction.ejs');
+}
 //Controlador para empleados
 export const formRegisterEmployee = (req, res) => {
   res.render('admin/createEmployee.ejs');

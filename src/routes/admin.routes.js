@@ -1,8 +1,11 @@
 import { Router } from 'express';
 const router = Router();
 //Importamos los controladores de empleados
-import { dashboardAdmin, formRegisterEmployee, getAllEmployees, registerEmployee, toggleEmployee } from '../controllers/admin.controllers.js';
-router.get('/dashboard', dashboardAdmin);
+import { dashboardAdmin, formRegisterEmployee, getAllEmployees, handleActionNotAllowed, registerEmployee, toggleEmployee } from '../controllers/admin.controllers.js';
+//Si se intenta acceder al dashboard desde la URL
+router.get('/dashboard', handleActionNotAllowed);
+
+router.post('/dashboard', dashboardAdmin);
 router.get('/createEmployee', formRegisterEmployee);
 router.post('/registerEmployee', registerEmployee);
 router.get('/getAllEmployees', getAllEmployees);
